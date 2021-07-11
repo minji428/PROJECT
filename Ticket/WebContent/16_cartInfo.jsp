@@ -41,7 +41,7 @@ request.setCharacterEncoding("UTF-8");
 						<font size="2"><%=++num %></font>
 					</td>
 					<td width = "100" align = "center">
-						<img alt="" src="img/<%=bean.getTicket_image() %>" height="40">
+						<img alt="아이템사진" src="TP_img/<%=bean.getTicket_image() %>" height="40">
 					</td>
 					<td width = "300">
 						<font size = "3"> <b><%=bean.getTicket_name() %></b></font>
@@ -53,7 +53,7 @@ request.setCharacterEncoding("UTF-8");
 						<font size = "3"> <b><%=bean.getBuy_price()*bean.getBuy_count() %>원</b></font>
 					</td>
 					<td width = "40" align = "center">
-					<input type = "image" value="삭제" src = "TP_img/delete.png" onclick="location.href='21_deleteCart.jsp?cart_number=<%=bean.getCart_number()%>'">
+					<input type = "image" value="삭제" src = "TP_img/delete.png" onclick="location.href='18_deleteCart.jsp?cart_number=<%=bean.getCart_number()%>'">
 						<%--<button type="button" onclick="location.href='21_deleteCart.jsp?cart_number=<%=bean.getCart_number()%>'" style="height:18px">
 							<img src ="img/delete.png"> --%>
 						</button> 
@@ -67,7 +67,7 @@ request.setCharacterEncoding("UTF-8");
 		total += bean.getBuy_count()*bean.getBuy_price();
 		}
 		%>
-		<form method="post" action="00_shopMain.jsp?center=22_order.jsp">
+		<form method="post" action="00_main.jsp?center=19_order.jsp">
 		<table>
 			<tr height = "30">
 				<td align="right" width = "480" align="right">
@@ -77,7 +77,14 @@ request.setCharacterEncoding("UTF-8");
 					<h4><%=total %>원</h4>
 				</td>
 			</tr>
-
+			<tr height = "40">
+				<td align="right" width = "480" align="right">
+					<h5>배송비</h5>
+				</td>
+				<td align="right" width = "200" align="right">
+						<h5>0원</h5>
+				</td>
+			</tr>
 			<tr height = "40">
 				<td align="right" width = "480" align="right">
 					<h3>총 결제금액 </h3>
@@ -88,7 +95,7 @@ request.setCharacterEncoding("UTF-8");
 			</tr>
 			<tr height = "30">
 				<td align="right" colspan="2">
-					<input type="image" src="TP_img/order.PNG" name="submit" value="주문하기" style="height:50px">
+					<input type="submit" name="submit" value="주문하기" class="btn btn-warning" />
 					<input type="hidden" name="total" value=<%=total %>>
 				</td>
 			</tr>

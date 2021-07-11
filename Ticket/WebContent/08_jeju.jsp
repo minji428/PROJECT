@@ -19,7 +19,7 @@ request.setCharacterEncoding("UTF-8");
 <body>
 	<h2 align="left">카테고리</h2>
 	
-	<table border="1">
+	<table>
 		<tr height="30">
 			<td align="center" width="200">투어</td>
 			<td align="center" width="200">입장권</td>
@@ -41,7 +41,7 @@ request.setCharacterEncoding("UTF-8");
 	
 	<h2 align="left">티켓</h2>
 	
-	<table border="1">
+	<table>
 	<%
 	
 	int j=0;
