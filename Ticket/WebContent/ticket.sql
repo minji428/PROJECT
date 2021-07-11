@@ -1,5 +1,5 @@
 CREATE DATABASE ticket;
-use ticket;
+use ticket; 
 
 CREATE TABLE customer(
 	id VARCHAR(50),
@@ -23,12 +23,35 @@ CREATE TABLE ticket(
     reg_date VARCHAR(50),
 	sold int(50)
 );
+
+CREATE TABLE cart(
+	cart_number int(50),
+	buyer VARCHAR(50),
+	ticket_name VARCHAR(16),
+	buy_price int(50),
+	buy_count int(50),
+	ticket_image VARCHAR(50)
+);
+
+CREATE TABLE buy(
+	customer_id VARCHAR(50),
+	customer_name VARCHAR(50),
+	cart_number int(50),
+	ticket_name VARCHAR(50),
+	buy_price int(50),
+	buy_count int(50),
+	ticket_image VARCHAR(50),
+	buy_date VARCHAR(50),
+	howpay VARCHAR(50),
+	address VARCHAR(100)
+);
+
 select * from ticket;
 select * from customer;
+select * from cart;
+select * from buy;
 drop table ticket;
 select * from ticket where ticket_number=1;
-
-
 
 
 

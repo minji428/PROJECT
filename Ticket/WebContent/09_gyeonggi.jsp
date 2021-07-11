@@ -119,14 +119,10 @@ request.setCharacterEncoding("UTF-8");
 					<%
 				}%>
 			</td>		
-			
-			
 		<%	
 			j+=1;
 	}
-	
 	%>
-
 	</table>
 </body>
 </html>
