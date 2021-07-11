@@ -15,7 +15,8 @@
 			center="02_center.jsp";
 		}
 	%>	
-	<table>
+<!--
+ 	<table>
 		<%-- top 부분 --%>
 		<tr height="120" align="center">
 			<td align="center" width="1000">
@@ -35,6 +36,19 @@
 			</td>
 		</tr>
 	</table>
+-->
+	<div align="center">
+		<jsp:include page="01_top.jsp"/>
+		<table>
+			<tr align="center">
+				<td align="center" width="1100">
+					<jsp:include page="<%=center %>"/>
+				</td>
+			</tr>
+		</table>
+<!-- 		<jsp:include page="<%=center %>"/> -->
+		<jsp:include page="03_bottom.jsp"/>
+	</div>
 </div>
 </body>
 </html>

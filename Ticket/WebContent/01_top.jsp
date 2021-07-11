@@ -21,7 +21,7 @@ request.setCharacterEncoding("UTF-8");
 %>
 	<table>
 		<tr height="70">
-			<td colspan="4">
+			<td colspan="5">
 				<a href="00_main.jsp"  style="text-decoration: none">
 				<img alt="" src="TP_img/KakaoTalk_20210414_195932358.jpg" height="120">
 				</a>
@@ -29,7 +29,7 @@ request.setCharacterEncoding("UTF-8");
 			<td colspan="1" align="right">
 				<a href = "00_main.jsp?center=21_orderListCheck.jsp"><%=id %>님</a>			
 			</td>
-			<td colspan="2">
+			<td colspan="1" align="right">
 				<%
 					if(id.equals("GUEST")){
 				%>
