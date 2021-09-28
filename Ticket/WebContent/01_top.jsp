@@ -1,3 +1,7 @@
+<%@page import="ticket.managerDAO"%>
+<%@page import="ticket.managerDTO"%>
+<%@page import="ticket.buyDAO"%>
+<%@page import="ticket.customerDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,38 +17,57 @@ request.setCharacterEncoding("UTF-8");
 <%
 	// 세션을 이용한 로그인 처리
 	String id = (String)session.getAttribute("id");
-
+	String managerId=(String)session.getAttribute("managerId");
+	
+	customerDTO customerbean = buyDAO.instance.getCustomerInfo(id);
+	managerDTO managerbean = managerDAO.instance.getManagerInfo(managerId);
+	String name="";
 	// 로그인이 되어있지 않다면
-	if(id == null){
-		id = "GUEST";
+	if(id == null && managerId == null){
+		name = "GUEST";
 	}
 %>
+	
 	<table>
 		<tr height="70">
-			<td colspan="5">
+			<td colspan="4">
 				<a href="00_main.jsp"  style="text-decoration: none">
-				<img alt="" src="TP_img/KakaoTalk_20210414_195932358.jpg" height="120">
+				<img alt="" src="TP_img/korea_map.jpg" height="120">
 				</a>
 			</td>
-			<td colspan="1" align="right">
-				<a href = "00_main.jsp?center=21_orderListCheck.jsp"><%=id %>님</a>			
-			</td>
-			<td colspan="1" align="right">
+			<td colspan="3" align="right">
 				<%
-					if(id.equals("GUEST")){
+					if(name.equals("GUEST")){
 				%>
+				<a href = "00_main.jsp?center=21_orderListCheck.jsp"><%=name %>님</a>			
 				<button onclick="location.href='00_main.jsp?center=04_login.jsp'" class="btn btn-light"> 로그인 </button>
 				<button onclick="location.href='00_main.jsp?center=04_newlogin.jsp'" class="btn btn-light"> 회원가입 </button>
-				<%						
+				<button onclick="location.href='00_main.jsp?center=22_customerCenter.jsp'" class="btn btn-light"> 고객센터 </button>
+				<%
 					}else{
-				 %>
-				 		<button onclick="location.href='00_main.jsp?center=16_cartInfo.jsp'" class="btn btn-light"> 장바구니 </button> 
-				 		<button onclick="location.href='05_logout.jsp'" class="btn btn-light"> 로그아웃 </button> 
-				<%						
+						if(id!=null){
+							name = customerbean.getName();
+				%>			
+							<a href = "00_main.jsp?center=21_orderListCheck.jsp"><%=name %>님</a>			
+					 		<button onclick="location.href='00_main.jsp?center=16_cartInfo.jsp'" class="btn btn-light"> 장바구니 </button> 
+							<button onclick="location.href='00_main.jsp?center=22_customerCenter.jsp'" class="btn btn-light"> 고객센터 </button>
+					 		<button onclick="location.href='05_logout.jsp'" class="btn btn-light"> 로그아웃 </button>
+				<%	 		 
+						}else if(managerId!=null){
+							name = managerbean.getName();
+				%>
+							<a href = "00_main.jsp?center=21_orderListCheck.jsp"><%=name %>님</a>			
+							<button onclick="location.href='00_main.jsp?center=25_itemInfoUpdate.jsp'" class="btn btn-light"> 상품수정 </button>
+							<button onclick="location.href='00_main.jsp?center=28_checkAllOrder.jsp'" class="btn btn-light"> 주문확인 </button>
+							<button onclick="location.href='00_main.jsp?center=22_customerCenter.jsp'" class="btn btn-light"> 고객센터 </button>
+					 		<button onclick="location.href='05_logout.jsp'" class="btn btn-light"> 로그아웃 </button>
+				<%
+						}
 					}
 				 %>
 			</td>
 		</tr>
+		
 		<tr height="50">
 			<td align="center" width="200" bgcolor="white">
 				<font color="white" size="3"><a href="00_main.jsp?center=06_seoul.jsp" 

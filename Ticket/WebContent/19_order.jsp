@@ -102,6 +102,14 @@ request.setCharacterEncoding("UTF-8");
 				<input type="text" name = "buyerAddress" value=<%=customerBean.getAddress() %> style="width:300px; height:30px">
 			</td>
 		</tr>
+		<tr height = "50">
+			<td width = "200" align="center">
+				<font size="2"><b>이메일</b></font>
+			</td>
+			<td width = "600">
+				<input type="text" name = "buyerAddress" value=<%=customerBean.getEmail() %> style="width:300px; height:30px">
+			</td>
+		</tr>
 		</table>
 		<br>
 		

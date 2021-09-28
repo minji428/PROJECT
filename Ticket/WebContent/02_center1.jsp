@@ -1,4 +1,3 @@
-<%@page import="ticket.managerDAO"%>
 <%@page import="ticket.locationDAO"%>
 <%@page import="ticket.locationDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -12,7 +11,7 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o" ></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o&callback=initMap&libraries=&v=weekly" async></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o&callback=initMap&libraries=&v=weekly&sensor=true" async></script>-->
 
 
 <style type="text/css">
@@ -27,26 +26,8 @@
 <body>
 <h2>어디로 여행 가시나요?</h2>
 <%
-	ArrayList<locationDTO> location = managerDAO.instance.getAlllocation();
-	int size = location.size();
-	
-	int[] t_number = new int[size];
-	String[] t_name= new String[size];
-	String[] t_category = new String[size];
-	String[] y_pos = new String[size];
-	String[] x_pos = new String[size];
-	
-	for(int i=0; i<location.size(); i++){
-		locationDTO bean = location.get(i);
-		
-		t_number[i] = bean.getTicket_number();
-		t_name[i] = bean.getTicket_name();
-		t_category[i] = bean.getTicket_category();
-		y_pos[i] = bean.getY_position();
-		x_pos[i] = bean.getX_position();
-	}
+	ArrayList<locationDTO> location = locationDAO.instance.getAlllocation();
 %>
-
 
     <script>
         function initMap() {
@@ -64,7 +45,7 @@
                 });
             }
         }
-        const locations = [        	
+        const locations = [
             { place:"[송파]롯데월드 아이스링크", lat: 37.51112, lng: 127.095973 },
             { place:"[마포]미스터힐링", lat: 37.5403412, lng: 126.9487133 },
             { place:"[안덕]카멜리아힐", lat: 33.288974, lng: 126.370141 },
