@@ -83,7 +83,7 @@ request.setCharacterEncoding("UTF-8");
 				<font size="2"><b>이름</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerName" value=<%=customerBean.getName() %> style="width:200px; height:30px">
+				<input type="text" name = "buyerName" style="width:200px height:30px" value=<%=customerBean.getName() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -91,7 +91,7 @@ request.setCharacterEncoding("UTF-8");
 				<font size="2"><b>전화번호</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerTel" value=<%=customerBean.getTel() %> style="width:200px; height:30px">
+				<input type="text" name = "buyerTel" style="width:200px height:30px" value=<%=customerBean.getTel() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -99,7 +99,7 @@ request.setCharacterEncoding("UTF-8");
 				<font size="2"><b>주소</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerAddress" value=<%=customerBean.getAddress() %> style="width:300px; height:30px">
+				<input type="text" name = "buyerAddress" style="width:300px height:30px" value=<%=customerBean.getAddress() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -107,7 +107,7 @@ request.setCharacterEncoding("UTF-8");
 				<font size="2"><b>이메일</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerAddress" value=<%=customerBean.getEmail() %> style="width:300px; height:30px">
+				<input type="text" name = "buyerAddress" style="width:300px height:30px" value=<%=customerBean.getEmail() %>>
 			</td>
 		</tr>
 		</table>

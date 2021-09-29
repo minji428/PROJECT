@@ -45,7 +45,7 @@ locationDTO lobean = locationDAO.instance.getOneLocation(ticket_number);
 		</tr>
 		<tr height="30">
 			<td width="150" align="center">
-			 	상품명
+			 	티켓명
 			</td>
 			<td width = "300">
 				<input type = "text" name = "name" value="<%=bean.getTicket_name() %>">
@@ -78,7 +78,7 @@ locationDTO lobean = locationDAO.instance.getOneLocation(ticket_number);
 		</tr>
 		<tr height="30">
 			<td width="150" align="center">
-			 	상품정보
+			 	티켓정보
 			</td>
 			<td width = "300">
 				<input type = "text" name = "info" value="<%=bean.getTicket_info() %>" >
@@ -113,7 +113,7 @@ locationDTO lobean = locationDAO.instance.getOneLocation(ticket_number);
 			 	위도
 			</td>
 			<td width = "300">
-				<input type = "text" name = "yposition" size="5" value="<%=lobean.getY_position() %>">
+				<input type = "text" name = "yposition" size="10" value="<%=lobean.getY_position() %>">
 			</td>
 		</tr>
 		<tr height="30">
@@ -121,7 +121,7 @@ locationDTO lobean = locationDAO.instance.getOneLocation(ticket_number);
 			 	경도
 			</td>
 			<td width = "300">
-				<input type = "text" name = "xposition" size="5" value="<%=lobean.getX_position() %>">
+				<input type = "text" name = "xposition" size="10" value="<%=lobean.getX_position() %>">
 			</td>
 		</tr>
 		<tr height="30">

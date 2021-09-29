@@ -26,6 +26,8 @@
  
 <body>
 <h2>어디로 여행 가시나요?</h2>
+<h2>위도 : <span id="latitude"></span></h2>
+<h2>경도 : <span id="longitude"></span></h2>
 <%
 	ArrayList<locationDTO> location = managerDAO.instance.getAlllocation();
 	int size = location.size();
@@ -49,6 +51,28 @@
 
 
     <script>
+    var latitude=0;
+    var longitude=0;
+    
+    // 현재 위치 추적
+	$(document).ready(function(){
+		if ("geolocation" in navigator) {	// geolocation 사용 가능 
+			navigator.geolocation.getCurrentPosition(function(data) {
+				latitude = data.coords.latitude;
+				longitude = data.coords.longitude;
+				$('#latitude').text(latitude);
+				$('#longitude').text(longitude);
+			}, function(error) {
+				alert(error);
+			}, {
+				enableHighAccuracy: true,
+				timeout: Infinity,
+				maximumAge: 0
+			});
+		} else {	// geolocation 사용 불가능
+			alert('geolocation 사용 불가능');
+		}
+	});
     
     var ti_name = new Array();
     var y_posi = new Array();
@@ -79,6 +103,7 @@
             });
         }
     }
+        
     </script>
     
     <div id="map"></div>

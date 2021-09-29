@@ -10,7 +10,7 @@
 <form method="post" action = "24_addNewTicketPro.jsp" enctype="multipart/form-data" accept-charset="UTF-8">
 	<table border="1"  style="border-collapse:collapse;">
 		<tr height="30">
-			<td width ="200">상품 카테고리</td>
+			<td width ="200">티켓 카테고리</td>
 			<td width = "500">
 				<select name="category">
 					<option value="100">서울</option>
@@ -25,19 +25,19 @@
 			</td>
 		</tr>
 		<tr height="30">
-			<td width ="200">상품명</td>
+			<td width ="200">티켓명</td>
 			<td width = "500">
 				<input type="text" name="name">
 			</td>
 		</tr>
 		<tr height="30">
-			<td width ="200">상품가격</td>
+			<td width ="200">티켓가격</td>
 			<td width = "500">
 				<input type="text" name="price">원
 			</td>
 		</tr>
 		<tr height="30">
-			<td width ="200">상품재고</td>
+			<td width ="200">티켓재고</td>
 			<td width = "500">
 				<input type="text" name="stock">
 			</td>
@@ -49,7 +49,7 @@
 			</td>
 		</tr>
 		<tr height="30">
-			<td width ="200">상품정보</td>
+			<td width ="200">티켓정보</td>
 			<td width = "500">
 				<input type="text" name="info" size="50">
 			</td>
