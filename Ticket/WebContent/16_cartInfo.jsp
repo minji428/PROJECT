@@ -56,7 +56,6 @@ request.setCharacterEncoding("UTF-8");
 					<input type = "image" value="삭제" src = "TP_img/delete.png" onclick="location.href='18_deleteCart.jsp?cart_number=<%=bean.getCart_number()%>'">
 						<%--<button type="button" onclick="location.href='21_deleteCart.jsp?cart_number=<%=bean.getCart_number()%>'" style="height:18px">
 							<img src ="img/delete.png"> --%>
-						</button> 
 					</td>
 				</tr>
 				

@@ -22,16 +22,10 @@ request.setCharacterEncoding("UTF-8");
 	
 	<table>
 		<tr height="30">
-			<td align="center" width="200">투어</td>
 			<td align="center" width="200">입장권</td>
 			<td align="center" width="200">액티비티</td>
-			<td align="center" width="200">클래스</td>
-			<td align="center" width="200">스냅촬영</td>
-		</tr>
-		<tr height="30">
 			<td align="center" width="200">미식</td>
 			<td align="center" width="200">스파/힐링</td>
-			<td align="center" width="200">이동/교통편의</td>
 			<td align="center" width="200">대여</td>
 		</tr>
 	</table>
@@ -39,6 +33,14 @@ request.setCharacterEncoding("UTF-8");
 	
 	<h2 align="left">서울</h2>
 	<img alt="서울지도" src="TP_img/seoul_map.png">
+	
+	<h2 align="left">추천티켓</h2>
+	
+	<table>
+
+	
+	</table>
+	
 	
 	<h2 align="left">티켓</h2>
 	
@@ -130,6 +132,5 @@ request.setCharacterEncoding("UTF-8");
 	%>
 
 	</table>
-</div>
 </body>
 </html>

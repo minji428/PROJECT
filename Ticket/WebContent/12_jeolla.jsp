@@ -22,16 +22,10 @@ request.setCharacterEncoding("UTF-8");
 	
 	<table>
 		<tr height="30">
-			<td align="center" width="200">투어</td>
 			<td align="center" width="200">입장권</td>
 			<td align="center" width="200">액티비티</td>
-			<td align="center" width="200">클래스</td>
-			<td align="center" width="200">스냅촬영</td>
-		</tr>
-		<tr height="30">
 			<td align="center" width="200">미식</td>
 			<td align="center" width="200">스파/힐링</td>
-			<td align="center" width="200">이동/교통편의</td>
 			<td align="center" width="200">대여</td>
 		</tr>
 	</table>
@@ -130,6 +124,5 @@ request.setCharacterEncoding("UTF-8");
 	%>
 
 	</table>
-</div>
 </body>
 </html>
