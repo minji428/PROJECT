@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o" ></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o&callback=initMap&libraries=&v=weekly" async></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=api키" ></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=api키&callback=initMap&libraries=&v=weekly" async></script>
 
 
 <style type="text/css">
