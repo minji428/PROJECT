@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBf8mgQPFOOLKCLCmEDFYhKpIBVUpPfV_o" ></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=API" ></script>
 
 <style>
 #map_ma {width:100%; height:800px; clear:both; border:solid 1px red;}
