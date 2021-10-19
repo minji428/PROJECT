@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/slide.css">
+<link rel="stylesheet" href="bootstrap.css">
 <%
 request.setCharacterEncoding("UTF-8");
 %>
@@ -67,37 +69,27 @@ request.setCharacterEncoding("UTF-8");
 				 %>
 			</td>
 		</tr>
-		
-		<tr height="50">
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=06_seoul.jsp" 
-				style="text-decoration: none">서울</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=08_jeju.jsp" 
-				style="text-decoration: none">제주도</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=09_gyeonggi.jsp" 
-				style="text-decoration: none">경기도</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=10_kangwon.jsp" 
-				style="text-decoration: none">강원도</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=11_chungcheng.jsp" 
-				style="text-decoration: none">충청도</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=12_jeolla.jsp" 
-				style="text-decoration: none">전라도</a></font>
-			</td>
-			<td align="center" width="200" bgcolor="white">
-				<font color="white" size="3"><a href="00_main.jsp?center=13_gyeongsand.jsp" 
-				style="text-decoration: none">경상도</a></font>
+		<tr height="1">
+			<td align="center" width="1000" bgcolor="white">
 			</td>
 		</tr>
 	</table>
+	
+	<div class="slide_wrapper">
+		<ul class="slides">
+			<li><a href="00_main.jsp?center=06_seoul.jsp" style="text-decoration: none">서울</a></li>
+			<li><a href="00_main.jsp?center=08_jeju.jsp" style="text-decoration: none">제주도</a></li>
+			<li><a href="00_main.jsp?center=09_gyeonggi.jsp" style="text-decoration: none">경기도</a></li>
+			<li><a href="00_main.jsp?center=10_kangwon.jsp" style="text-decoration: none">강원도</a></li>
+			<li><a href="00_main.jsp?center=11_chungcheng.jsp" style="text-decoration: none">충청도</a></li>
+			<li><a href="00_main.jsp?center=12_jeolla.jsp" style="text-decoration: none">전라도</a></li>
+			<li><a href="00_main.jsp?center=13_gyeongsand.jsp" style="text-decoration: none">경상도</a></li>
+		</ul>
+	</div>
+	<p class="controls">
+		<span class="prev">◀</span>
+		<span class="next">▶</span>
+	</p>
+	<script src="js/slide.js"></script>
 </body>
 </html>
