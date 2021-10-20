@@ -17,12 +17,12 @@ ArrayList<ticketDTO> allTicket = ticketDAO.instance.getAllTicket();
 <table>
 	<tr>
 		<td width="1000" align="left">
-			<button onclick="location.href='00_main.jsp?center=23_addNewTicket.jsp'">신상품 추가하기</button>
+			<button onclick="location.href='00_main.jsp?center=23_addNewTicket.jsp'" class="btn btn-outline-info">신상품 추가하기</button>
 		</td>
 	</tr>
 </table>
 
-<table border="1"  style="border-collapse:collapse;">
+<table>
 	<tr height="50">
 		<td width = "50" align="center"><b>번호</b></td>
 		<td width = "100" align = "center"><b>카테고리</b></td>

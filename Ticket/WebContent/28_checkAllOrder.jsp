@@ -12,22 +12,21 @@
 <body>
 <%
 ArrayList<buyDTO> buylist = managerDAO.instance.getAllOrderList();
-System.out.println("buylist size : "+buylist.size());
 int num=0;
 %>
 
-<table border ="1" style="border-collapse:collapse;">
+<table>
 	<tr height="50">
-		<td width="50" align="center">번호</td>
-		<td width="100" align="center">아이디</td>
-		<td width="100" align="center">주문자명</td>
-		<td width="100" align="center">상품명</td>
-		<td width="100" align="center">가격</td>
-		<td width="100" align="center">구매갯수</td>
-		<td width="50" align="center">이미지</td>
-		<td width="200" align="center">구매일자</td>
-		<td width="100" align="center">결제수단</td>
-		<td width="300" align="center">주소</td>
+		<td width="50" align="center"><b>번호</b></td>
+		<td width="100" align="center"><b>아이디</b></td>
+		<td width="100" align="center"><b>주문자명</b></td>
+		<td width="100" align="center"><b>상품명</b></td>
+		<td width="100" align="center"><b>가격</b></td>
+		<td width="100" align="center"><b>구매갯수</b></td>
+		<td width="50" align="center"><b>이미지</b></td>
+		<td width="200" align="center"><b>구매일자</b></td>
+		<td width="100" align="center"><b>결제수단</b></td>
+		<td width="300" align="center"><b>주소</b></td>
 	</tr>
 	
 	<%

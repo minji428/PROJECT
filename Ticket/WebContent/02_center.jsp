@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=api키" ></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=api키&callback=initMap&libraries=&v=weekly" async></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=API키" ></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=API키&callback=initMap&libraries=&v=weekly" async></script>
 
 
 <style type="text/css">
@@ -26,8 +26,7 @@
  
 <body>
 <h2>어디로 여행 가시나요?</h2>
-<h2>위도 : <span id="latitude"></span></h2>
-<h2>경도 : <span id="longitude"></span></h2>
+<h6>위도 : <span id="latitude"></span> 경도 : <span id="longitude"></span></h6>
 <%
 	ArrayList<locationDTO> location = managerDAO.instance.getAlllocation();
 	int size = location.size();

@@ -8,7 +8,7 @@
 </head>
 <body>
 <form method="post" action = "24_addNewTicketPro.jsp" enctype="multipart/form-data" accept-charset="UTF-8">
-	<table border="1"  style="border-collapse:collapse;">
+	<table>
 		<tr height="30">
 			<td width ="200">티켓 카테고리</td>
 			<td width = "500">
@@ -74,7 +74,7 @@
 		</tr>
 	
 	</table>
-	<input type="submit" value="티켓 추가하기">
+	<input type="submit" value="티켓 추가하기" class="btn btn-outline-info">
 </form>
 </body>
 </html>
