@@ -18,7 +18,7 @@ public class boardDAO {
 	
 	
 	public Connection getConnection() {
-		String dbURL = "jdbc:mysql://localhost:3306/marketkurlydb01?serverTimezone=UTC";
+		String dbURL = "jdbc:mysql://localhost:3306/ticket?serverTimezone=UTC";
 		String dbID = "root";
 		String dbPassword = "alswl3092!";
 		try {
