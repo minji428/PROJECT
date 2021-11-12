@@ -18,6 +18,17 @@
 	String title = request.getParameter("title");
 	String pw = request.getParameter("pw");
 	String content = request.getParameter("content");
+	String id = (String)session.getAttribute("id");
+	
+	if(pw==""){
+		
+	}else{
+		title = "[비밀글]"+title;
+	}
+	
+	if(writer==null){
+		writer=id;
+	}
 	
 	boardDTO dto = new boardDTO();
 	

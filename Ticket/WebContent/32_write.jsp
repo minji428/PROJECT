@@ -20,7 +20,17 @@
 		<tr height = "50">
 			<td width = "200" align="center"><b>작성자</b></td>
 			<td width = "400">
+			<%
+				if(id!=null){
+			%>
+				<%=id %>
+			<%
+				}else{
+			%>
 				<input type = "text" name ="writer" size = "20" class="form-control">
+			<%
+				}
+			%>
 			</td>
 		</tr>
 		<tr height = "50">

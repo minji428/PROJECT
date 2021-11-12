@@ -73,9 +73,17 @@
 						<a href="00_main.jsp?center=30_showBoardContent.jsp?num=<%= bean.getNum() %>" style="text-decoration: none"><%=bean.getTitle() %></a>
 						<%
 					}else{
+						String pw = boardDAO.instance.checkPw(i);
+						System.out.println("게시글 비밀번호 확인 : "+pw);
+						if(pw.equals(" ")){
 						%>
-						<a href="00_main.jsp?center=37_checkPwForRead.jsp?num=<%= bean.getNum() %>" style="text-decoration: none"><%=bean.getTitle() %></a>
+							<a href="00_main.jsp?center=30_showBoardContent.jsp?num=<%= bean.getNum() %>" style="text-decoration: none"><%=bean.getTitle() %></a>
 						<%
+						}
+						else{
+						%>
+							<a href="00_main.jsp?center=37_checkPwForRead.jsp?num=<%= bean.getNum() %>" style="text-decoration: none"><%=bean.getTitle() %></a>
+						<%}
 					}
 					%>						
 				</td>

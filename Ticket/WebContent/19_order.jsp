@@ -1,3 +1,5 @@
+<%@page import="ticket.customerDAO"%>
+<%@page import="ticket.buyDTO"%>
 <%@page import="ticket.buyDAO"%>
 <%@page import="ticket.cartDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -20,8 +22,18 @@ request.setCharacterEncoding("UTF-8");
 	String id=(String)session.getAttribute("id");
 	customerDTO customerBean = buyDAO.instance.getCustomerInfo(id);
 	ArrayList<cartDTO> itemlist = buyDAO.instance.getTicketList(id);
+	ArrayList<buyDTO> buylist = buyDAO.instance.getbuyList(id);
 	int num=0;
 	int total = Integer.parseInt(request.getParameter("total"));
+	int point=0;
+	int usePoint = customerDAO.instance.getPoint(id);
+%>
+
+<%
+for(int i=0; i<buylist.size(); i++){
+	buyDTO bean = buylist.get(i);
+	point += bean.getBuy_price()*bean.getBuy_count()*0.01;
+}
 %>
 <div width = "800">
 	<h2>주문서</h2>
@@ -66,7 +78,6 @@ request.setCharacterEncoding("UTF-8");
 		%>
 		</table>
 	
-	<%-- --%>
 	<table>
 		<tr height="50">
 		<td colspan = "2">
@@ -112,7 +123,7 @@ request.setCharacterEncoding("UTF-8");
 		</tr>
 		</table>
 		<br>
-		
+
 		<table>
 		<tr height="50">
 		<td colspan = "2">
@@ -126,6 +137,14 @@ request.setCharacterEncoding("UTF-8");
 		</tr>
 		<tr height="50">
 			<td width="200" align="center">
+				<font size="2"><b>포인트 사용</b></font>
+			</td>
+			<td width="600">
+				<%=usePoint %>원
+			</td>
+		</tr>
+		<tr height="50">
+			<td width="200" align="center">
 				<font size="2"><b>결제수단</b></font>
 			</td>
 			<td width="600">
@@ -135,9 +154,8 @@ request.setCharacterEncoding("UTF-8");
 				</select>
 			</td>
 		</tr>
+		
 		</table>
-		
-		
 		<table>
 			<tr height="50">
 				<td width="800">
@@ -151,7 +169,7 @@ request.setCharacterEncoding("UTF-8");
 			</tr>
 			<tr height="50">
 				<td align = "right" width="800">
-					<h3><%=total %>원</h3>
+					<h3><%=total-usePoint %>원</h3>
 				</td>
 			</tr>
 			<tr height="50">

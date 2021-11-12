@@ -1,3 +1,4 @@
+<%@page import="ticket.customerDAO"%>
 <%@page import="ticket.buyDAO"%>
 <%@page import="ticket.buyDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,9 +16,11 @@ request.setCharacterEncoding("UTF-8");
 %>
 
 <%
-String id=(String)session.getAttribute("id");
-ArrayList<buyDTO> buylist = buyDAO.instance.getbuyList(id);
-int num=0;
+	String id=(String)session.getAttribute("id");
+	ArrayList<buyDTO> buylist = buyDAO.instance.getbuyList(id);
+	int num=0;
+	int point=0;
+	int usePoint=customerDAO.instance.getPoint(id);
 %>
 
 <h2>주문내역 확인</h2>
@@ -80,13 +83,24 @@ int num=0;
 				<font size = "2"><%=bean.getHowpay() %></font>
 			</td>
 		</tr>
-			<%
-			
+		<%
+			point += bean.getBuy_price()*bean.getBuy_count()*0.01;	// 1% 포인트 적립
 		}
 		
 		%>
-	
-	
+		<tr height="3">
+			<td colspan="5"/>
+			<td colspan="2">
+				<hr size="2" color="gray">
+			</td>
+		</tr>
+		<tr height="30">
+			<td colspan="6"/>
+			<td colspan="1">
+				<p><font size="2">포인트 적립 내역 : <%=point %>원</font></p>		
+				<font size="2">사용 가능 포인트 : <%=usePoint %>원</font>		
+			</td>
+		</tr>
 	</table>
 </body>
 </html>
