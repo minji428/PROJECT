@@ -107,7 +107,7 @@ public class customerDAO {
 			if(rs!=null)
 				try {rs.close();}catch(SQLException sqle) {}
 		}
-		System.out.println(" id 확인용 = " + id);
+		//System.out.println(" id 확인용 = " + id);
 		return id;
 	}
 	
@@ -135,7 +135,7 @@ public class customerDAO {
 			if(rs!=null)
 				try {rs.close();}catch(SQLException sqle) {}
 		}
-		System.out.println(" pw 확인용 = " + pw);
+		//System.out.println(" pw 확인용 = " + pw);
 		return pw;
 	}
 	
@@ -204,4 +204,29 @@ public class customerDAO {
 		return check;
 	}
 	
+	public int getPoint(String id) {
+		int point=0;
+		try {
+			conn=getConnection();
+			String sql = "SELECT * FROM customer WHERE id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				point = rs.getInt("point");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(conn!=null)
+				try {conn.close();}catch(SQLException sqle) {}
+			if(pstmt!=null)
+				try {pstmt.close();}catch(SQLException sqle) {}
+			if(rs!=null)
+				try {rs.close();}catch(SQLException sqle) {}
+		}
+		//System.out.println(" point 확인용 = " + point);
+		return point;
+	}
 }

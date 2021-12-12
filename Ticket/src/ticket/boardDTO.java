@@ -10,6 +10,7 @@ public class boardDTO {
 	private int ref;
 	private int re_step;
 	private int re_level;
+	private int re_count;
 	private int readcount;
 	private String content;
 	
@@ -61,6 +62,12 @@ public class boardDTO {
 	}
 	public void setRe_level(int re_level) {
 		this.re_level = re_level;
+	}
+	public int getRe_count() {
+		return re_count;
+	}
+	public void setRe_count(int re_count) {
+		this.re_count = re_count;
 	}
 	public int getReadcount() {
 		return readcount;

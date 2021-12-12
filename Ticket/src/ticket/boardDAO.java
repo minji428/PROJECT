@@ -71,6 +71,7 @@ public class boardDAO {
 		}
 		return boardlist;
 	}
+	
 	public int getAllCount() {
 		int count = 0;
 		try {
@@ -137,7 +138,6 @@ public class boardDAO {
 		}
 	}
 	
-	
 	public int checkPwForRead(int num, String pw) {
 		int check=-1;
 		try {
@@ -164,6 +164,33 @@ public class boardDAO {
 		}
 		
 		return check;
+	}
+	
+	public String checkPw(int num) {
+		String pw="";
+		try {
+			conn = getConnection();
+			
+			String sql = "select pw from board where num=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				pw=rs.getString(num);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(conn!=null)
+				try {conn.close();}catch(SQLException sqle) {}
+			if(pstmt!=null)
+				try {pstmt.close();}catch(SQLException sqle) {}
+			if(rs!=null)
+				try {rs.close();}catch(SQLException sqle) {}
+		}
+		
+		return pw;
 	}
 	
 	public boardDTO getOneBoard(int num) {

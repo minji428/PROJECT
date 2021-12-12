@@ -8,6 +8,7 @@ public class customerDTO {
 	private String tel;					
 	private String address;
 	private String email;
+	private int point;
 
 	public String getEmail() {
 		return email;
@@ -51,6 +52,13 @@ public class customerDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public double getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
 }
 
 
