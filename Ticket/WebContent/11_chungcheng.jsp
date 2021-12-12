@@ -32,7 +32,7 @@ request.setCharacterEncoding("UTF-8");
 	<br>
 	
 	<h2 align="left">충청도</h2>
-	<img alt="충청도지도" src="TP_img/seoul_map.png">
+	<img alt="충청도지도" src="TP_img/chungcheng_map.png">
 	
 		<h2 align="left">추천티켓</h2>
 	

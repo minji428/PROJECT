@@ -43,17 +43,25 @@ request.setCharacterEncoding("UTF-8");
 				</script>
 				<%
 			}else{
-				customerDAO.instance.insertMember(id, pw, name, tel, address, email);
+				if(id==""){
 				%>
 				<script>
-				alert("회원가입이 완료되었습니다.");
-				location.href="00_main.jsp";
+					alert("아이디를 입력해주세요");
+					history.go(-1);
 				</script>
-				<% 
+				<%
+				}else{
+					customerDAO.instance.insertMember(id, pw, name, tel, address, email);
+					%>
+					<script>
+					alert("회원가입이 완료되었습니다.");
+					location.href="00_main.jsp";
+					</script>
+					<% 
+				}
 			}
 		}
 	}
-			
-	%>
+%>
 </body>
 </html>

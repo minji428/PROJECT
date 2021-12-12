@@ -1,4 +1,3 @@
-<%@page import="ticket.customerDAO"%>
 <%@page import="ticket.buyDTO"%>
 <%@page import="ticket.buyDAO"%>
 <%@page import="ticket.cartDTO"%>
@@ -26,7 +25,6 @@ request.setCharacterEncoding("UTF-8");
 	int num=0;
 	int total = Integer.parseInt(request.getParameter("total"));
 	int point=0;
-	int usePoint = customerDAO.instance.getPoint(id);
 %>
 
 <%
@@ -94,7 +92,7 @@ for(int i=0; i<buylist.size(); i++){
 				<font size="2"><b>이름</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerName" class="form-control" value=<%=customerBean.getName() %>>
+				<input type="text" name = "buyerName" style="width:200px height:30px" value=<%=customerBean.getName() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -102,7 +100,7 @@ for(int i=0; i<buylist.size(); i++){
 				<font size="2"><b>전화번호</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerTel" class="form-control" value=<%=customerBean.getTel() %>>
+				<input type="text" name = "buyerTel" style="width:200px height:30px" value=<%=customerBean.getTel() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -110,7 +108,7 @@ for(int i=0; i<buylist.size(); i++){
 				<font size="2"><b>주소</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerAddress" class="form-control" value=<%=customerBean.getAddress() %>>
+				<input type="text" name = "buyerAddress" style="width:300px height:30px" value=<%=customerBean.getAddress() %>>
 			</td>
 		</tr>
 		<tr height = "50">
@@ -118,7 +116,7 @@ for(int i=0; i<buylist.size(); i++){
 				<font size="2"><b>이메일</b></font>
 			</td>
 			<td width = "600">
-				<input type="text" name = "buyerAddress" class="form-control" value=<%=customerBean.getEmail() %>>
+				<input type="text" name = "buyerAddress" style="width:300px height:30px" value=<%=customerBean.getEmail() %>>
 			</td>
 		</tr>
 		</table>
@@ -137,14 +135,6 @@ for(int i=0; i<buylist.size(); i++){
 		</tr>
 		<tr height="50">
 			<td width="200" align="center">
-				<font size="2"><b>포인트 사용</b></font>
-			</td>
-			<td width="600">
-				<%=usePoint %>원
-			</td>
-		</tr>
-		<tr height="50">
-			<td width="200" align="center">
 				<font size="2"><b>결제수단</b></font>
 			</td>
 			<td width="600">
@@ -156,28 +146,32 @@ for(int i=0; i<buylist.size(); i++){
 		</tr>
 		
 		</table>
-		<table>
-			<tr height="50">
-				<td width="800">
-					<h3 align = "left">결제금액</h3>
-				</td>
-			</tr>
-			<tr height="5">
-				<td width="800">
-					<hr size="1" color="gray" width="800">
-				</td>
-			</tr>
-			<tr height="50">
-				<td align = "right" width="800">
-					<h3><%=total-usePoint %>원</h3>
-				</td>
-			</tr>
-			<tr height="50">
-				<td align="center" width="800">
-					<input type="submit" name="submit" value="결제하기" class="btn btn-warning" />
-				</td>
-			</tr>
-		
+				<table>
+		<tr height="50">
+		<td colspan = "2">
+			<h3 align = "left">결제금액</h3>
+		</td>
+		</tr>
+		<tr height="5">
+		<td colspan ="2">
+			<hr size="1" color="gray" width="800">
+		</td>
+		</tr>
+		<tr height="50">
+			<td width="200" align="center">
+				<font size="2"><b>포인트 사용</b></font>
+			</td>
+			<td width="600">
+				<%=point %>원
+			</td>
+		</tr>
+		<tr height="50">
+			<td width="200" align="center">
+				<font size="2"><b>최종 결제 금액</b></font>
+			</td>
+			<td width="600">
+				<h3><%=total-point %>원</h3>
+			</td>
 		</table>
 	</form>
 	</div>

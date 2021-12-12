@@ -32,7 +32,7 @@ request.setCharacterEncoding("UTF-8");
 	<br>
 	
 	<h2 align="left">전라도</h2>
-	<img alt="전라도지도" src="TP_img/seoul_map.png">
+	<img alt="전라도지도" src="TP_img/jeolla_map.jpg">
 	
 		<h2 align="left">추천티켓</h2>
 	

@@ -22,7 +22,8 @@ request.setCharacterEncoding("UTF-8");
 	customerDTO customerBean = buyDAO.instance.getCustomerInfo(customer_id);
 	ArrayList<cartDTO> cartlist = cartDAO.instance.getCartList(customer_id);
 	int payhow = Integer.parseInt(request.getParameter("howPay"));
-	int usePoint = customerDAO.instance.getPoint("id");
+	int usePoint = Integer.parseInt(request.getParameter("usePoint"));
+	int ePoint = customerDAO.instance.getPoint("id");
 	String pay="";
 	if(payhow==1){
 		pay="계좌이체";
@@ -57,7 +58,7 @@ request.setCharacterEncoding("UTF-8");
 		int point = buy_price*(int)0.01;	
 		
 		System.out.println("point 출력 : "+point);
-		cus.setPoint(usePoint+point);
+		cus.setPoint(ePoint-usePoint+point);
 		
 		buyDAO.instance.insertOrderList(dto);
 		buyDAO.instance.updateSold(ticket_name, buy_count);

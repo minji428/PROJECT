@@ -50,6 +50,11 @@
 	<input type = "submit" class="btn btn-outline-success" value = "수정하기">&nbsp;
 	<input type = "reset" class="btn btn-outline-success" value = "다시작성">
 	<input type = "hidden" name = "num" value = <%=num %>>
+	<input type = "hidden" name = "num" value = <%=num %>>
+	<input type = "hidden" name = "num" value = <%=num %>>
+	<input type = "hidden" name = "num" value = <%=num %>>
+	<input type = "hidden" name = "num" value = <%=num %>>
+	<input type = "hidden" name = "num" value = <%=num %>>
 </form>
 </body>
 </html>
